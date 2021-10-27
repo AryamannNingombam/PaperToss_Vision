@@ -10,7 +10,7 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
     Rigidbody ball;
 
     int time = 0;
-    bool start = false;
+    bool startSwipeTimer = false;
     bool startTimer = false;
     float timerValue = 75;
 
@@ -22,10 +22,10 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
 
     void ISwipeHandler.OnSwipeCompleted(SwipeEventData eventData)
     { 
-        print("COMPLETE");
-        start = false;
-        time = 0;
-        print(time);
+        
+
+        
+         
     }
 
     void ISwipeHandler.OnSwipeDown(SwipeEventData eventData, float value)
@@ -45,6 +45,7 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
 
     void ISwipeHandler.OnSwipeStarted(SwipeEventData eventData)
     {
+        startSwipeTimer = true;
         
     }
 
@@ -54,11 +55,10 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
 
         ball.AddForce(new Vector3(widthForce*30f,heightForce*50f, 30f),ForceMode.Impulse);
         startTimer = true;
-        
-        print("Swipe!");
-
-
-        //Instantiate(ball, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
+        startSwipeTimer = false;
+        print(time);
+        time = 0;
+         
 
     }
 
@@ -78,7 +78,7 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
     {
 
 
-        if (start) time++;
+        if (startSwipeTimer) time++;
         if (startTimer)
 
         {
@@ -88,7 +88,6 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
             }
             else
             {
-                print("Times up!");
                 ball = Instantiate(ball, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
                 timerValue = 75;
                 startTimer = false;
