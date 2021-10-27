@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{09F380EF-B0D0-2D53-1537-95EE5B1B6F80}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectSwipe.cs">
+    <Files>
+      <File FileName="Assets/Scripts/DetectSwipe.cs" Line="53" Column="18" />
+      <File FileName="Assets/JMRSDK/JMRToolkits/UX/UI InputField/Scripts/JMRInputField.cs" Line="995" Column="32" />
+      <File FileName="Assets/JMRSDK/JMRToolkits/UX/UI InputField/Scripts/JMRUIPrimaryInputField.cs" />
+      <File FileName="Assets/JMRSDK/JMRToolkits/UX/UI SearchBar/Scripts/JMRUIPrimarySearchField.cs" />
+      <File FileName="Assets/JMRSDK/JMRToolkits/UX/UI SearchBar/Scripts/JMRSearchField.cs" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2c12f899-2c46-4861-977c-e4cbf0b0a0ff" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
