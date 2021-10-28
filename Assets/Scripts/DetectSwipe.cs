@@ -13,11 +13,16 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
     bool startSwipeTimer = false;
     bool startTimer = false;
     float timerValue = 75;
-
+    int points = 0;
 
     void ISwipeHandler.OnSwipeCanceled(SwipeEventData eventData)
     {
         //print("Swipe cancelled!");
+    }
+
+    void IncrementPoint()
+    {
+        PointsController.incrementPoints();
     }
 
     void ISwipeHandler.OnSwipeCompleted(SwipeEventData eventData)
@@ -58,6 +63,7 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
         startSwipeTimer = false;
         print(time);
         time = 0;
+        IncrementPoint();
          
 
     }

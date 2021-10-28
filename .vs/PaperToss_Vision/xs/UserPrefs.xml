@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{4C5E9976-2D11-2CFA-6F20-1FA41EC68375}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectSwipe.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PointsController.cs">
     <Files>
-      <File FileName="Assets/Scripts/DetectSwipe.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DetectSwipe.cs" Line="26" Column="6" />
+      <File FileName="Assets/Scripts/PointsController.cs" Line="8" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6e4901e1-61c0-4353-817a-84e13b611f16" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="65cb5d43-6a24-4b7a-a758-257fe3d22f57" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
