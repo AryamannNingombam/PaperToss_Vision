@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{4C5E9976-2D11-2CFA-6F20-1FA41EC68375}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PointsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectCollision.cs">
     <Files>
-      <File FileName="Assets/Scripts/DetectSwipe.cs" Line="26" Column="6" />
-      <File FileName="Assets/Scripts/PointsController.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/DetectSwipe.cs" Line="65" Column="18" />
+      <File FileName="Assets/Scripts/PointsController.cs" Line="29" Column="69" />
+      <File FileName="Assets/Scripts/DetectCollision.cs" Line="14" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

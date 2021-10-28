@@ -3,34 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using JMRSDK.InputModule;
 
-public class DetectSwipe : MonoBehaviour,ISwipeHandler
+public class DetectSwipe : MonoBehaviour, ISwipeHandler
 {
     float heightForce, widthForce;
     [SerializeField]
     Rigidbody ball;
 
+
+    [SerializeField]
+    public GameObject Fan;
+    [SerializeField]
+    public Transform FanT;
+    Vector3 Pos1 = new Vector3(-2.41f, 2.66f, 7.69f);
+    Vector3 Pos2 = new Vector3(2.01f, 2.66f, 7.69f);
+    int p = 0;
+
+
     int time = 0;
-    bool startSwipeTimer = false;
+    bool start = false;
     bool startTimer = false;
     float timerValue = 75;
-    int points = 0;
+    //[SerializeField]
+    //FanWind wind;
+
 
     void ISwipeHandler.OnSwipeCanceled(SwipeEventData eventData)
     {
         //print("Swipe cancelled!");
     }
 
-    void IncrementPoint()
-    {
-        PointsController.incrementPoints();
-    }
-
     void ISwipeHandler.OnSwipeCompleted(SwipeEventData eventData)
-    { 
-        
-
-        
-         
+    {
+        print("COMPLETE");
+        start = false;
+        time = 0;
+        print(time);
     }
 
     void ISwipeHandler.OnSwipeDown(SwipeEventData eventData, float value)
@@ -50,33 +57,67 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
 
     void ISwipeHandler.OnSwipeStarted(SwipeEventData eventData)
     {
-        startSwipeTimer = true;
-        
+
     }
 
     void ISwipeHandler.OnSwipeUp(SwipeEventData eventData, float value)
     {
-        
 
-        ball.AddForce(new Vector3(widthForce*30f,heightForce*50f, 30f),ForceMode.Impulse);
+
+        ball.AddForce(new Vector3(widthForce * 30f, heightForce * 50f, 30f), ForceMode.Impulse);
         startTimer = true;
-        startSwipeTimer = false;
-        print(time);
-        time = 0;
-        IncrementPoint();
-         
+
+        print("Swipe!");
+
+        addwind();
+        //Instantiate(ball, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
 
     }
 
     void ISwipeHandler.OnSwipeUpdated(SwipeEventData eventData, Vector2 swipeData)
     {
-        
+
     }
+
+    public void changepos()
+    {
+
+        //changing the position of the fan
+        if (p == 0)
+        {
+            FanT.localPosition = Pos2;
+            p = 1;
+        }
+        else
+        {
+            FanT.localPosition = Pos1;
+            p = 0;
+        }
+
+    }
+
+
+    public void addwind()
+    {
+        //Adding veloity
+        if (p == 0)
+        {
+            print("entering1");
+            ball.AddForce(new Vector3(100, 0, 0));
+        }
+        else
+        {
+            print("entering2");
+            ball.AddForce(-100, 0, 0);
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
         JMRInputManager.Instance.AddGlobalListener(gameObject);
+        FanT.localPosition = Pos1;
     }
 
     // Update is called once per frame
@@ -84,21 +125,24 @@ public class DetectSwipe : MonoBehaviour,ISwipeHandler
     {
 
 
-        if (startSwipeTimer) time++;
+        if (start) time++;
         if (startTimer)
 
         {
             if (timerValue > 0)
             {
-                timerValue -= Time.deltaTime*100;
+                timerValue -= Time.deltaTime * 100;
             }
             else
             {
+                print("Times up!");
                 ball = Instantiate(ball, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
+                //wind.PaperR=Instantiate(wind.PaperR, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
                 timerValue = 75;
                 startTimer = false;
+                changepos();
             }
-            
+
         }
 
 

@@ -165,6 +165,7 @@
     <Compile Include="Assets/JMRSDK/UI/Example/DEMO/Scripts/ButtonActionManager.cs" />
     <Compile Include="Assets/JMRSDK/UI/Example/DEMO/Scripts/DemoSceneInteractions.cs" />
     <Compile Include="Assets/JMRSDK/UI/Example/DEMO/Scripts/UIButtonSpawner.cs" />
+    <Compile Include="Assets/Scripts/DetectCollision.cs" />
     <Compile Include="Assets/Scripts/DetectSwipe.cs" />
     <Compile Include="Assets/Scripts/PointsController.cs" />
   </ItemGroup>

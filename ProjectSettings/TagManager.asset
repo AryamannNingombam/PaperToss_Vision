@@ -18,6 +18,7 @@ TagManager:
   - PrimaryTextLayer
   - HoverLayer
   - ErrorLayer
+  - Dustin_Sphere_Tag
   layers:
   - Default
   - TransparentFX
