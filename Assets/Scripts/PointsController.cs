@@ -6,16 +6,18 @@ using UnityEngine.UI;
 public class PointsController : MonoBehaviour
 {
 
-    static private int points = 0;
-  
+    static public int points = 0;
+
     static public void incrementPoints()
     {
         points++;
+        DetectSwipe.level = points+1;
     }
 
     static public void restartPoints()
     {
         points = 0;
+        
     }
 
     void Start()
@@ -26,6 +28,11 @@ public class PointsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DetectSwipe.throws - points > 2)
+        {
+            print("f");
+        }
+   
         GetComponent<Text>().text = "Points : " + points.ToString();
     }
 }

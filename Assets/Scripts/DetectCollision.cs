@@ -18,26 +18,26 @@ public class DetectCollision : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.tag);
         if (collision.gameObject.tag == "Dustin_Sphere_Tag" && collided==false)
         {
             collided = true;
             startTimer = true;
-            print(collision.gameObject.name);
             IncrementPoint();
 
         }
-        print("Collided!");
+      
     }
     // Update is called once per frame
     void Update()
     {
+        
         if (startTimer)
         {
             timer -= Time.deltaTime * 100;
         }
         if (timer < 0)
         {
+            
             Destroy(gameObject);
         }
     }

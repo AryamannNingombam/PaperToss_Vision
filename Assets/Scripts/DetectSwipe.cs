@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using JMRSDK.InputModule;
+using System;
 
 public class DetectSwipe : MonoBehaviour, ISwipeHandler
 {
@@ -17,8 +18,10 @@ public class DetectSwipe : MonoBehaviour, ISwipeHandler
     Vector3 Pos1 = new Vector3(-2.41f, 2.66f, 7.69f);
     Vector3 Pos2 = new Vector3(2.01f, 2.66f, 7.69f);
     int p = 0;
-
-
+    public static int level = 1;
+    float power = 50;
+    public static int throws = 0;
+    System.Random generator = new System.Random();
     int time = 0;
     bool start = false;
     bool startTimer = false;
@@ -29,30 +32,28 @@ public class DetectSwipe : MonoBehaviour, ISwipeHandler
 
     void ISwipeHandler.OnSwipeCanceled(SwipeEventData eventData)
     {
-        //print("Swipe cancelled!");
+     
     }
 
     void ISwipeHandler.OnSwipeCompleted(SwipeEventData eventData)
     {
-        print("COMPLETE");
         start = false;
         time = 0;
-        print(time);
     }
 
     void ISwipeHandler.OnSwipeDown(SwipeEventData eventData, float value)
     {
-        //print("Swipe down!"); 
+ 
     }
 
     void ISwipeHandler.OnSwipeLeft(SwipeEventData eventData, float value)
     {
-        //print("Swipe left!");
+
     }
 
     void ISwipeHandler.OnSwipeRight(SwipeEventData eventData, float value)
     {
-        //print("Swipe right!");
+
     }
 
     void ISwipeHandler.OnSwipeStarted(SwipeEventData eventData)
@@ -66,9 +67,7 @@ public class DetectSwipe : MonoBehaviour, ISwipeHandler
 
         ball.AddForce(new Vector3(widthForce * 30f, heightForce * 50f, 30f), ForceMode.Impulse);
         startTimer = true;
-
-        print("Swipe!");
-
+        throws++;
         addwind();
         //Instantiate(ball, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
 
@@ -81,6 +80,7 @@ public class DetectSwipe : MonoBehaviour, ISwipeHandler
 
     public void changepos()
     {
+
 
         //changing the position of the fan
         if (p == 0)
@@ -99,16 +99,20 @@ public class DetectSwipe : MonoBehaviour, ISwipeHandler
 
     public void addwind()
     {
+
+        if (level%5 == 0)
+        {
+            print(power);
+            power += 50;
+        }
         //Adding veloity
         if (p == 0)
         {
-            print("entering1");
-            ball.AddForce(new Vector3(100, 0, 0));
+            ball.AddForce(new Vector3(power, 0, 0));
         }
         else
         {
-            print("entering2");
-            ball.AddForce(-100, 0, 0);
+            ball.AddForce(-power, 0, 0);
         }
     }
 
@@ -124,6 +128,7 @@ public class DetectSwipe : MonoBehaviour, ISwipeHandler
     void Update()
     {
 
+        
 
         if (start) time++;
         if (startTimer)
@@ -135,7 +140,6 @@ public class DetectSwipe : MonoBehaviour, ISwipeHandler
             }
             else
             {
-                print("Times up!");
                 ball = Instantiate(ball, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
                 //wind.PaperR=Instantiate(wind.PaperR, new Vector3(0, 3.08f, 2.07f), Quaternion.identity);
                 timerValue = 75;
