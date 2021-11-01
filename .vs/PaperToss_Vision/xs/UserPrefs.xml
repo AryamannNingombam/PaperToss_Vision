@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{4C5E9976-2D11-2CFA-6F20-1FA41EC68375}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectCollision.cs">
     <Files>
-      <File FileName="Assets/Scripts/DetectSwipe.cs" Line="65" Column="18" />
-      <File FileName="Assets/Scripts/PointsController.cs" Line="29" Column="69" />
-      <File FileName="Assets/Scripts/DetectCollision.cs" Line="14" Column="9" />
+      <File FileName="Assets/Scripts/DetectSwipe.cs" Line="153" Column="2" />
+      <File FileName="Assets/Scripts/PointsController.cs" />
+      <File FileName="Assets/Scripts/DetectCollision.cs" Line="9" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="65cb5d43-6a24-4b7a-a758-257fe3d22f57" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e10aa7e7-c85c-4fb7-b8e0-647d24cf26a3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
